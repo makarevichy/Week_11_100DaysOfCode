@@ -1,7 +1,8 @@
 library(mice)
+library(purrr)
 mtcars2 <- mtcars
 for(i in seq_along(mtcars2)){
-  mtcars2[sample(nrow(mtcars2), size = 2, replace = F), i] <- NA
+  mtcars2[sample(nrow(mtcars2), size = 3, replace = F), i] <- NA
 }
 
 val_na <- lapply(mtcars2, function(x) which(is.na(x)))
@@ -22,7 +23,13 @@ for (i in seq_along(val_na)) {
 }
 
 f <- function(x, y){
-  mean(abs(x - y))
+  sum(abs(x - y))
 }
 
 map2(vec, vec2, f)
+
+df_binary <- as.data.frame(abs(is.na(mtcars2)))
+y <- names(df_binary)[apply(df_binary, 2, sum) > 0]
+df_binary <- df_binary[ ,y]
+cor(df_binary)
+cor(mtcars2, df_binary, use = 'pairwise.complete.obs')
