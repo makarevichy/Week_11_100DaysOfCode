@@ -7,8 +7,8 @@
 **Thoughts** 
 - I worked with the missing data and methods of filling. I read the chapters of environments and conditions from the book Advanced R once again to get a deeper understanding of these topics.
 
-**Link(s) to work**
-[Work with NA value](https://github.com/makarevichy/Week_11_100DaysOfCode/blob/master/weekday/Day_72.R)
+**Link(s) to work**<br />
+[Work with NA value](https://github.com/makarevichy/Week_11_100DaysOfCode/blob/master/weekday/Day_72.R)<br />
 [Work with chapters of book](https://github.com/makarevichy/Week_11_100DaysOfCode/blob/master/weekday/Days_72_73.R)
 
 ### Day 71: July 29, Sunday.
